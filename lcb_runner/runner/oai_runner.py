@@ -13,7 +13,9 @@ from lcb_runner.runner.base_runner import BaseRunner
 
 class OpenAIRunner(BaseRunner):
     client = OpenAI(
-        api_key=os.getenv("OPENAI_KEY"),
+        api_key=os.getenv("OPENAI_API_KEY"),
+        base_url=os.getenv("OPENAI_BASE_URL"),
+        timeout=3600
     )
 
     def __init__(self, args, model):
@@ -31,6 +33,9 @@ class OpenAIRunner(BaseRunner):
             self.client_kwargs: dict[str | str] = {
                 "model": model,
                 "reasoning_effort": reasoning_effort,
+                "max_tokens": args.max_tokens,
+                "temperature": args.temperature,
+                "n": args.n,
             }
         else:
             self.client_kwargs: dict[str | str] = {

@@ -861,7 +861,50 @@ LanguageModelList: list[LanguageModel] = [
         datetime(2024, 4, 1),
         "https://huggingface.co/agentica-org/DeepCoder-14B-Preview",
     ),
-]
+    # Custom models
+    LanguageModel(
+        "gpt-oss-20b__low",
+        "gpt-oss-20b__low",
+        LMStyle.OpenAIReason,
+        datetime(2023, 4, 30),
+        link="https://platform.openai.com/docs/api-reference/chat/create#chat-create-reasoning_effort",
+    ),
+     LanguageModel(
+        "gpt-oss-20b__medium",
+        "gpt-oss-20b__medium",
+        LMStyle.OpenAIReason,
+        datetime(2023, 4, 30),
+        link="https://platform.openai.com/docs/api-reference/chat/create#chat-create-reasoning_effort",
+    ),
+     LanguageModel(
+        "gpt-oss-20b__high",
+        "gpt-oss-20b__high",
+        LMStyle.OpenAIReason,
+        datetime(2023, 4, 30),
+        link="https://platform.openai.com/docs/api-reference/chat/create#chat-create-reasoning_effort",
+    ),
+     LanguageModel(
+        "gpt-oss-120b__low",
+        "gpt-oss-120b__low",
+        LMStyle.OpenAIReason,
+        datetime(2023, 4, 30),
+        link="https://platform.openai.com/docs/api-reference/chat/create#chat-create-reasoning_effort",
+    ),
+     LanguageModel(
+        "gpt-oss-120b__medium",
+        "gpt-oss-120b__medium",
+        LMStyle.OpenAIReason,
+        datetime(2023, 4, 30),
+        link="https://platform.openai.com/docs/api-reference/chat/create#chat-create-reasoning_effort",
+    ),
+     LanguageModel(
+        "gpt-oss-120b__high",
+        "gpt-oss-120b__high",
+        LMStyle.OpenAIReason,
+        datetime(2023, 4, 30),
+        link="https://platform.openai.com/docs/api-reference/chat/create#chat-create-reasoning_effort",
+    ),
+ ]
 
 LanguageModelStore: dict[str, LanguageModel] = {
     lm.model_name: lm for lm in LanguageModelList

@@ -1,3 +1,19 @@
+# Fork of LiveCodeBench
+
+This is a personal fork to use LiveCodeBench in local environment. It has a few bugfixes and improvements. The main focus is OAI models.
+
+## Quick Usage
+Setup:
+- Download files from https://huggingface.co/datasets/livecodebench/code_generation_lite/tree/main
+
+Run:
+```bash
+export OPENAI_API_KEY=fake
+export OPENAI_BASE_URL=http://localhost:8000/v1
+python -m lcb_runner.runner.main --model gpt-oss-120b__low --scenario codegeneration --multiprocess 64 --release_version release_v6 --n 10 --max_tokens 100000 --evaluate
+```
+
+
 # LiveCodeBench
 Official repository for the paper "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code"
 
